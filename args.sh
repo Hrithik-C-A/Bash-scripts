@@ -13,3 +13,5 @@ for index in ${!arguments[@]}
 do
   echo "The argument $((index + 1)) is ${arguments[$index]}" 
 done
+
+exit 0
