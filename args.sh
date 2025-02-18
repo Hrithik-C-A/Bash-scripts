@@ -1,6 +1,15 @@
 #!/bin/bash
 
-for arg in "$@"
+if [ $# -lt 1 ]
+then
+  echo "Usage: $(basename "$0") <arg1> [arg2] [arg3] ..."
+  echo "Error: Please supply at least one argument."
+  exit 1
+fi
+
+arguments=("$@")
+
+for index in ${!arguments[@]}  
 do
-  echo "I found the argument: $arg" 
+  echo "The argument $((index + 1)) is ${arguments[$index]}" 
 done
